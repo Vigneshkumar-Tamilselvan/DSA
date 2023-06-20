@@ -1,4 +1,4 @@
-package mandatoryHomeWork.selfLearn;
+package selfLearn;
 
 import org.junit.Assert;
 import org.junit.Test;

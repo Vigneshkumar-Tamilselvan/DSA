@@ -1,4 +1,4 @@
-package mandatoryHomeWork.selfLearn;
+package selfLearn;
 
 import java.util.Arrays;
 import java.util.HashSet;

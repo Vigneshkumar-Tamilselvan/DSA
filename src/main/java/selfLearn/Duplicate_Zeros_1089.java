@@ -1,4 +1,4 @@
-package mandatoryHomeWork.selfLearn;
+package selfLearn;
 
 public class Duplicate_Zeros_1089 {
 
