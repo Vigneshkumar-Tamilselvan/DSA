@@ -1,9 +1,9 @@
-package mandatoryHomeWork.week1;
+package mandatoryHomeWork.week1.day2;
 
 import org.junit.Test;
 
-public class Pyramid_pattern {
-
+public class Diamond_pattern {
+	@Test
 	public void test_data() {
 		int n = 5;
 		two_sum(n);
@@ -19,7 +19,15 @@ public class Pyramid_pattern {
 			}
 			System.out.println();
 		}
+		for (int i = 4; i >= 0; i--) { // row
+			for (int j = n - i; j > 1; j--) { // inner line space
+				System.out.print(" ");
+			}
+			for (int j = 0; j <= i; j++) { // column
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
 
 	}
-
 }

@@ -1,11 +1,11 @@
-package mandatoryHomeWork.week1;
+package mandatoryHomeWork.week1.day1;
 
 import org.junit.Test;
 
 public class AddMissingNumber {
 
 //Given sorted array and insert the missing number in array.
-
+	@Test
 	public void testdata_1() {
 		int[] arr = { 1, 2, 3, 5, 6 };// Sorted array
 		int missing_number = 4; // Missing number
