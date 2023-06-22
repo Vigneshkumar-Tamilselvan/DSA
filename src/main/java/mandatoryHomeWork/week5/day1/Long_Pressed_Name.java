@@ -25,15 +25,16 @@ public class Long_Pressed_Name {
 
 		int p1 = 0, p2 = 0;
 
-		if (name.length() == typed.length())
-			return true;
+		/*
+		 * if (name.length() == typed.length()) return true;
+		 */
 		if (name.length() > typed.length())
 			return false;
 
 		while (p2 < typed.length()) {
 			if (p1 < name.length() && name.charAt(p1) == typed.charAt(p2))
 				p1++;
-			else if (p2 == 0 || typed.charAt(p2) != typed.charAt(p2))
+			else if (p2 == 0 || typed.charAt(p2) != typed.charAt(p2-1))
 				return false;
 			p2++;
 		}

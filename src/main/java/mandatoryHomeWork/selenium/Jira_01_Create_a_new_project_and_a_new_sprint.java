@@ -1,8 +1,12 @@
 package mandatoryHomeWork.selenium;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
+import java.sql.Date;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -10,13 +14,16 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 public class Jira_01_Create_a_new_project_and_a_new_sprint {
 
 	public static void main(String[] args) throws InterruptedException {
-
 		// 1. Log in to JIRA
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-notifications");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://vigneshkumartamilselvan.atlassian.net/");
 		driver.manage().window().maximize();
@@ -82,28 +89,35 @@ public class Jira_01_Create_a_new_project_and_a_new_sprint {
 		boolean star_status = driver.findElement(By.xpath("//div[@id=\"ghx-header-dynamic-append-zone\"]/button/span"))
 				.isSelected();
 		assertTrue(star_status);
+		System.out.println("Step 7 pass");
 
 		// 7. Verify there is No Sprit have started(Next to star) and click on Backlog.
 		// String tooltipText = ageTextBox.getAttribute("title");
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//a[@href=\"/jira/software/c/projects/TP3/boards/25/backlog\"]")).click();
-		Actions actions = new Actions(driver);
-		WebElement start_Sprint = driver.findElement(By.xpath("(//div[@class='header-right'])[1]"));
-		actions.moveToElement(start_Sprint).perform();
-		String sprint_msg = driver
-				.findElement(By.xpath("//div[text() = \"Sprint cannot be started because it contains no issues\"]"))
-				.getText();
-		Assert.assertEquals(sprint_msg, "Sprint cannot be started because it contains no issues");
-		System.out.println(sprint_msg);
+		driver.findElement(By.xpath("//span[text()=\"Backlog\"]/ancestor::a")).click();
+		boolean start_Sprint = driver.findElement(By.xpath("//button[text()='Start sprint']")).isEnabled();
+		assertFalse(start_Sprint);
 
 		// 8. Now click on Add date in the sprint 1(Default sprint pane) and click add
 		// dates, Verify add dates text before clicking.
-		driver.findElement(By.xpath("//button[text() = \"Create sprint\"]")).click();
-		driver.findElement(By.xpath("//*[text()=\"Add dates\"]")).click();
-		driver.findElement(By.xpath("//input[@class =\"text\"]")).sendKeys("Test update project - 1");
+		String addDates = driver.findElement(By.xpath("//span[text()=\"Add dates\"]")).getText();
+		Assert.assertEquals(addDates, "Add dates");
+		driver.findElement(By.xpath("//span[text()=\"Add dates\"]")).click();
+
+		// 9. In the Displaying pop up, Update the sprint name as Project_Name -
+		// Sprint_1_2W and Select Duration as 2 Weeks, Start date as Current time + 45
+		// Mins and Click on Update button.
+		driver.findElement(By.xpath("//input[@class =\"text\"]")).sendKeys("Project_Name - Sprint_1_2W");
+		Select select = new Select(driver.findElement(By.id("ghx-sprint-duration")));
+		select.selectByValue("2 weeks ");
 		// Display the Date & Time using toString()
-		//Date date = Calendar.getInstance().getTime();
-		//String formatter = new SimpleDateFormat("dd-M-yyyy").format(date);
+		System.out.println(Calendar.getInstance().getTime());
+		// String formatter = new SimpleDateFormat("dd-M-yyyy").format(date);
+		
+		// 10. Verify Create sprint button is disabled.
+		
+		
+		//11. Click on Add issue and Add 2 Story and 2 Bugs, After adding verify the project name with bug id, JIRA status as Todo and Assignee as Unassigned.
 
 	}
 
