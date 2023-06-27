@@ -1,8 +1,8 @@
-package selfLearn;
+package selfLearn.slidingWindow;
 
 import org.junit.Test;
 
-public class Rough_Work {
+public class LC443StringCompression {
 	@Test
 	public void test1() {
 		char[] chars = { 'a', 'a', 'b', 'b', 'c', 'c', 'c' };

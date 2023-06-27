@@ -10,7 +10,7 @@ public class LC438FindAllAnagramsInAString {
 
 	@Test
 	public void test01() {
-		String s = "cbaebabacd", p = "abc";
+		String s = "cbaebabacb", p = "abc";
 		findAllAnagramsInAString(s, p);
 	}
 
@@ -32,14 +32,19 @@ public class LC438FindAllAnagramsInAString {
 		ls.forEach(index -> System.out.println(index));
 
 		while (right < s.length()) {
-			map1.put(s.charAt(left), map1.get(s.charAt(left) - 1));
+			if (s.charAt(left) >= 1)
+				map1.put(s.charAt(left), map1.get(s.charAt(left) - 1));
+			else
+				map1.remove(s.charAt(left));
+			left++;
 			if (map1.equals(map2))
 				ls.add(left);
-			left++;
-			map1.put(s.charAt(right), map1.getOrDefault(s.charAt(right), 0) + 1);
+
+			map1.put(s.charAt(right), map1.get(s.charAt(right) + 1));
 			right++;
+			
 		}
-		
+
 		ls.forEach(index -> System.out.println(index));
 		return ls;
 	}
