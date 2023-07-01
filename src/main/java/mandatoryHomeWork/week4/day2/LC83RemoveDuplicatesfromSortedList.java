@@ -1,4 +1,4 @@
-package mandatoryHomeWork.week4.day1;
+package mandatoryHomeWork.week4.day2;
 
 import org.junit.Test;
 
@@ -38,7 +38,6 @@ public class LC83RemoveDuplicatesfromSortedList {
 				current.next = current.next.next;
 			System.out.println(current.data);
 			current = current.next;
-		
 		}
 	}
 }
