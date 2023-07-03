@@ -1,33 +1,23 @@
-package selfLearn;
-
-import org.junit.Test;
-
-public class Rough_Work {
-	@Test
-	public void test1() {
-		char[] chars = { 'a', 'a', 'b', 'b', 'c', 'c', 'c' };
-		System.out.println(compress(chars));
-
-	}
-
-	public int compress(char[] chars) {
-		int count = 1;
-		int index = 0;
-		for (int i = 1; i <= chars.length; i++) {
-			if (i < chars.length && chars[i] == chars[i - 1]) {
-				count++;
-			} else {
-				chars[index++] = chars[i - 1];
-				if (count > 1) {
-					String countstr = String.valueOf(count);
-					for (char c : countstr.toCharArray()) {
-						chars[index++] = c;
-					}
-				}
-				count = 1;
-			}
-		}
-
-		return index;
-	}
-}
+/*
+ * package selfLearn;
+ * 
+ * import java.util.HashMap; import java.util.Map; import org.junit.Test;
+ * 
+ * public class Rough_Work {
+ * 
+ * @Test public void test_01() { int[] nums = { 8, 7, 2, 5, 3, 1 }; int target =
+ * 10; pairOfGivenSum(nums, target); }
+ * 
+ * private void pairOfGivenSum(int[] nums, int target) {
+ * 
+ * Map<Integer, Integer> map = new HashMap<>(); for (int i = 0; i < nums.length;
+ * i++) { int value = target - nums[i];
+ * 
+ * if (map.containsKey(value)) { map.put(nums[i], i)
+ * 
+ * }
+ * 
+ * else map.put(nums[i], i);
+ * 
+ * }
+ */

@@ -22,18 +22,15 @@ public class LC567PermutationInString {
 			w1[s1.charAt(right) - 'a']++;
 			w1[s2.charAt(right) - 'a']++;
 			right++;
+			System.out.println(w1[s1.charAt(right) - 'a']);
 		}
+
 		if (Arrays.equals(w1, w2))
 			return true;
 
 		while (right < s2.length()) {
-			w2[s2.charAt(left) - 'a']--;
-			left++;
-			System.out.println(Arrays.toString(w2));
-			if (Arrays.equals(w1, w2))
-				return true;
-			w2[s2.charAt(right) - 'a']++;
-			right++;
+			if (w1[s1.charAt(right) - 'a'] >= 1)
+				w1[s1.charAt(right) - 'a']--;
 		}
 		return false;
 	}
