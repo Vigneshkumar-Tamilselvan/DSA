@@ -3,7 +3,7 @@ package selfLearn.slidingWindow;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class LC1876SubstringsOfSizeThreeWithDistinctCharacters {
+public class LC1876SubstringsOfSizeThreeWithDistinctCharactersMap {
 	@Test
 	public void test_01() {
 		String s = "xyzzaz";
