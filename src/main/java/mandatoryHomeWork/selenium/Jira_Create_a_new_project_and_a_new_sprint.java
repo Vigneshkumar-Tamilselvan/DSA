@@ -18,7 +18,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class Jira_01_Create_a_new_project_and_a_new_sprint {
+public class Jira_Create_a_new_project_and_a_new_sprint {
 
 	public static void main(String[] args) throws InterruptedException {
 		// 1. Log in to JIRA

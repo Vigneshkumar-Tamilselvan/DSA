@@ -1,4 +1,4 @@
-package mandatoryHomeWork.selenium;
+package selfLearn.selenium;
 
 import java.time.Duration;
 import java.util.ArrayList;

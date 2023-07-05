@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class S9MakeMyTripSearchFlight {
+public class MakeMyTripSearchFlight {
 
 	public static void main(String[] args) throws InterruptedException {
 
