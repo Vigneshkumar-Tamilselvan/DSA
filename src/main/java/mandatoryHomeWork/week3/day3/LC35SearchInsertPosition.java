@@ -2,12 +2,11 @@ package mandatoryHomeWork.week3.day3;
 
 import org.junit.Test;
 
-public class Search_Insert_Position {
+public class LC35SearchInsertPosition {
 	@Test
 	public void data_01() {
 		int[] nums = { 1, 2, 4, 5, 6, 8 };
 		int target = 3;
-		// insert_Position(nums, target);
 		System.out.println(insert_Position(nums, target));
 	}
 

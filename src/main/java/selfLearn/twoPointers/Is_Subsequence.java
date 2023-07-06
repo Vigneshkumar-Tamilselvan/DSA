@@ -1,4 +1,4 @@
-package mandatoryHomeWork.week3.day3; //class program
+package selfLearn.twoPointers; //class program
 
 import org.junit.Assert;
 import org.junit.Test;

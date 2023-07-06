@@ -23,7 +23,7 @@ public class SinglyLinkedListImplementation {
 	}
 
 	@Test
-	public void createList() {
+	public void createList_static() {
 		Node p1 = new Node(1);
 		Node p2 = new Node(1);
 		Node p3 = new Node(2);
@@ -37,6 +37,18 @@ public class SinglyLinkedListImplementation {
 		p4.next = p5;
 
 		printLinkedList(head);
+	}
+	
+	private ListNode createList_dynamic(int[] head) {
+		ListNode input = new ListNode(0);
+		ListNode current = input;
+
+		for (int value : head) {
+			current.next = new ListNode(value);
+			current = current.next;
+		}
+
+		return input.next;
 	}
 
 }

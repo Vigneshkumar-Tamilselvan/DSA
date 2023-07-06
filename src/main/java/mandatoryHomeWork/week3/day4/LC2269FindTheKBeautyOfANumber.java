@@ -2,7 +2,7 @@ package mandatoryHomeWork.week3.day4;
 
 import org.junit.Test;
 
-public class K_Beauty_of_a_Number {
+public class LC2269FindTheKBeautyOfANumber {
 	@Test
 	public void data_01() {
 		String num = "430043";
