@@ -5,11 +5,10 @@ import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Minimum_Absolute_Difference {
+public class LC1200MinimumAbsoluteDifference {
 
 	@Test
 	public void data_01() {
-
 		int[] arr = { 3, 8, -10, 23, 19, -4, -14, 27 };
 		sort_number(arr);
 		Assert.assertEquals(sort_number(arr), 4);
@@ -17,12 +16,12 @@ public class Minimum_Absolute_Difference {
 
 	private int sort_number(int[] arr) {
 		int min = 0, dif = 0;
-		for (int left = 0; left < arr.length; left++) {
-			for (int right = left + 1; right < arr.length; right++) {
-				if (arr[left] > arr[right]) {
-					int temp = arr[left];
-					arr[left] = arr[right];
-					arr[right] = temp;
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[i] > arr[j]) {
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
 				}
 			}
 		}
@@ -31,12 +30,11 @@ public class Minimum_Absolute_Difference {
 		for (int i = 1; i < arr.length; i++) {
 			dif = arr[i - 1] - arr[i];
 			System.out.println(dif);
-			if (min > dif) {
-				min = dif;
-				
-				System.out.println("["+arr[i - 1]+","+arr[i]+"]");
-			}
+			min = Math.min(min, dif);
+
+			System.out.println("[" + arr[i - 1] + "," + arr[i] + "]");
 		}
+
 		return min;
 	}
 
