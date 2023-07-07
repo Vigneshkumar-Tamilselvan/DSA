@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -32,6 +33,8 @@ public class MakeMyTripSearchFlight {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("return document.readyState").toString().equals("complete");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		Actions action = new Actions(driver);
+		//action.scrollToElement(null)
 
 		// 3. Click on the "Flights" tab.
 		driver.findElement(By.xpath("(//span[text()=\"Flights\"]/parent::a)[1]")).click();

@@ -2,28 +2,31 @@ package selfLearn.stack;
 
 import java.util.Stack;
 
-public class LC32LongestValidParentheses {
+import org.junit.Test;
 
+import junit.framework.Assert;
+
+public class LC32LongestValidParentheses {
+	@Test
 	public void data_01() {
-		String s = ")()((())()()";
+		String s = ")([]})";
 		longestValidParentheses(s);
+		Assert.assertEquals(longestValidParentheses(s), true);
 	}
 
-	private void longestValidParentheses(String s) {
-		Stack<Character> st = new Stack<>();
-		int open = 0, close = 0, max = 0;
-		for (int i = 0; i < s.length(); i++) {
-			if (s.charAt(i) == '(') {
-				st.push(s.charAt(i));
-				open+=2;
-			} else {
-			
-				if (!st.isEmpty())
-					st.pop();
-				
-				max = Math.max(max, i - st.peek());
-			}
+	private boolean longestValidParentheses(String s) {
+		Stack<Character> stack = new Stack<>();
+		int pointer = 0;
+		while (pointer < s.length()) {
+			if (s.charAt(pointer) == '{')
+				stack.push('}');
+			else if (s.charAt(pointer) == '[')
+				stack.push(']');
+			else if (s.charAt(pointer) == '(')
+				stack.push(')');
+			else if (stack.isEmpty() || stack.pop() != s.charAt(pointer))
+				return false;
 		}
-
+		return stack.isEmpty();
 	}
 }

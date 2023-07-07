@@ -2,7 +2,14 @@ package selfLearn;
 
 public class RoughWork {
 
-	public static void main(String[] args) {
-		System.out.println(430043%43);
+	public void test_01() {
+		String s = "ASDFGHJK";
+		int k = 3;
+		roughWork(s, k);
+	}
+
+	private void roughWork(String s, int k) {
+		// TODO Auto-generated method stub
+
 	}
 }
