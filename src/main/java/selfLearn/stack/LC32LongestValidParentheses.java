@@ -11,7 +11,7 @@ public class LC32LongestValidParentheses {
 	public void data_01() {
 		String s = ")([]})";
 		longestValidParentheses(s);
-		Assert.assertEquals(longestValidParentheses(s), true);
+		Assert.assertEquals(longestValidParentheses(s), false);
 	}
 
 	private boolean longestValidParentheses(String s) {

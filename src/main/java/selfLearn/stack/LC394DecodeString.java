@@ -1,5 +1,7 @@
 package selfLearn.stack;
 
+import java.util.Stack;
+
 public class LC394DecodeString {
 
 	public void test_01() {
@@ -8,6 +10,11 @@ public class LC394DecodeString {
 	}
 
 	private void decodeString(String input) {
-
+		int pointer = 0;
+		Stack<Character> stack = new Stack<>();
+		while (pointer < input.length()) {
+			if(input.charAt(pointer)!=']')
+				stack.push(input.charAt(pointer));
+		}
 	}
 }
