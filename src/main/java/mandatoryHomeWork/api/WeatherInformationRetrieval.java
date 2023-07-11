@@ -1,31 +1,28 @@
 package mandatoryHomeWork.api;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 public class WeatherInformationRetrieval {
 	public static void main(String[] args) {
-		createUser();
+		get_Current_Weather_By_City_Name();
 	}
 
-	public static void createUser() {
-		// set url
-		RestAssured.baseURI = "https://reqres.in";
-		// set base path
-		RestAssured.basePath = "/api/user";
-		// prepare request
-		Map<String, String> queryParam = new HashMap<>();
-		queryParam.put("id", "2");
-		Response response = RestAssured.given().queryParams(queryParam).accept(ContentType.JSON).when().get();
-
+	public static void get_Current_Weather_By_City_Name() {
+		RestAssured.baseURI = "https://api.openweathermap.org/data/2.5";
+		RestAssured.basePath = "/weather";
+		HashMap<String, String> queryparams = new HashMap<String, String>();
+		queryparams.put("appid", "6cfda92d21f527094e02e423e094adf7");
+		queryparams.put("q", "Dindigul");
+		Response response = RestAssured.given().queryParams(queryparams).get();
 		response.prettyPrint();
-		 System.out.println(response.statusCode());
-		List<String> list = response.jsonPath().getList("data");
-		System.out.println(list);
+		assertEquals(response.statusCode(), 200);
+		String categories = response.jsonPath().get("response.name");
+		System.out.println(categories);
 	}
 }

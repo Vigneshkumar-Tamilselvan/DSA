@@ -71,7 +71,7 @@ public class Jira_Create_a_new_project_and_a_new_sprint {
 		Assert.assertFalse(project_key_value.isEmpty());
 		driver.findElement(By.xpath("(//span[text() =\"Create project\"])[2]")).click();
 
-		List<String> status_List = new ArrayList<>();
+		List<String> status_List = new ArrayList<String>();
 		status_List.add("To Do");
 		status_List.add("In Progress");
 		status_List.add("Done");
