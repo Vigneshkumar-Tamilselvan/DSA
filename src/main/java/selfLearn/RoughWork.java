@@ -1,28 +1,33 @@
 package selfLearn;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Test;
 
 public class RoughWork {
 @Test
 	public void test_01() {
-		int[] nums = { 1, 0, 9, 8, 0, 0, 5, 6, 0 };
-		moveLeft(nums);
+	String pattern = "abcdf",s = "qw er ty ui op";
+		moveLeft(pattern, s);
 	}
 
-	private int[] moveLeft(int[] nums) {
-		int p1 = 0, p2 = 0;
-		while (p2 < nums.length) {
-			if (nums[p2] == 0) {
-				int temp = nums[p1];
-				nums[p1] = nums[p2];
-				nums[p2] = temp;
-				p1++;
+	private boolean moveLeft(String pattern, String s) {
+		int pointer = 0;
+		String[] word = s.split(" ");
+		Map<Character, String> map = new HashMap<Character, String>();
+
+		if (pattern.length() == word.length) {
+			while (pointer < pattern.length()) {
+				map.put(pattern.charAt(pointer), map.getOrDefault(pattern.charAt(pointer),0) + 1);
 			}
-			p2++;
+			pointer++;
+			
 		}
-		System.out.println(Arrays.toString(nums));
-		return nums;
+		
+
+		return false;
 	}
 }
+//Time - O(n)
+//space - O(n)
