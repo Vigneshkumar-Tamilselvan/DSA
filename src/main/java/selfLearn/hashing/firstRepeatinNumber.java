@@ -1,4 +1,4 @@
-package selfLearn;
+package selfLearn.hashing;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +26,7 @@ public class firstRepeatinNumber {
 				map.put(arr[i], 1);
 			i++;
 		}
-		return map;
+		return 0;
 	}
 }
 //Time - O(n)
