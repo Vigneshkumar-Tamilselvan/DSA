@@ -9,7 +9,7 @@ import org.junit.Test;
 public class RepeatsTheMaximumNumberOfTimes {
 	@Test
 	public void test_01() {
-		int[] arr = { 1, 5, 2, 2, 2, 2, 3, 4, 3, 5, 6, 3, 4, 4 };
+		int[] arr = { 1, 5, 3, 4, 3, 5, 6, 3, 4, 4 };
 		repeatsTheMaximumNumberOfTimes(arr);
 	}
 
