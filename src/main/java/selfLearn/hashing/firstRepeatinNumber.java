@@ -5,10 +5,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import junit.framework.Assert;
-import net.bytebuddy.asm.Advice.Return;
-
-public class firstRepeatinNumber {
+public class FirstRepeatinNumber {
 	@Test
 	public void test_01() {
 		int[] arr = { 1, 5, 3, 4, 3, 5, 6 };

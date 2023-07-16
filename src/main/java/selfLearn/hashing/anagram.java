@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 
-public class anagram {
+public class Anagram {
 	@Test
 	public void test_01() {
 		String s = "anagram", t = "eagaram";
